@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  margin-top: 50px; /* Adjust as needed */
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: #007bff; /* You can set any color you like */
+  border-radius: 50%; /* This creates the circle shape */
+}
