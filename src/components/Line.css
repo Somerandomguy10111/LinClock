@@ -25,5 +25,12 @@
   width: 200px; /* Adjust based on your actual image size */
   height: 200px; /* Adjust based on your actual image size */
   align-self: center; /* This ensures the triangle is also centered vertically */
+  animation: slide 1s linear infinite; /* Runs the animation */
   margin-top: -20px; /* Adjust this value to move the triangle up */
+}
+
+@keyframes slide {
+  0% { left: 0; }
+  50% { left: calc(100%); } /* 200px is the width of the triangle */
+  100% { left: 0; }
 }
