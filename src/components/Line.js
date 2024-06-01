@@ -10,15 +10,15 @@ const Line = () => {
     const updatePosition = () => {
       const now = new Date();
       // For fraction of the day:
-      // const secondsSinceMidnight = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-      // const secondsInADay = 86400; // 24 * 60 * 60
-      // const fractionOfDay = (secondsSinceMidnight / secondsInADay) * 100;
+      const secondsSinceMidnight = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+      const secondsInADay = 86400; // 24 * 60 * 60
+      const fraction = (secondsSinceMidnight / secondsInADay) * 100;
 
       // For fraction of the minute:
-      const secondsInMinute = now.getSeconds();
-      const fractionOfMinute = (secondsInMinute / 60) * 100;
+      // const secondsInMinute = now.getSeconds();
+      // const fractionOfMinute = (secondsInMinute / 60) * 100;
 
-      setLeftPosition(`${fractionOfMinute}%`);
+      setLeftPosition(`${fraction}%`);
     };
 
     const timerId = setInterval(updatePosition, 1000); // Update every second
