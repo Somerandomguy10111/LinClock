@@ -22,12 +22,8 @@
 
 
 .triangle {
-  position: absolute;
-  top: -30px; /* Adjust based on the new size and the visual requirement */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;  /* Increased size for better visibility */
-  height: 40px;  /* Increased size for better visibility */
-  background: url('src/img/triangle.png') no-repeat center; /* Ensure the image fits the div size */
-  background-size: contain; /* Adjust the background size to fit the div */
+  width: 200px; /* Adjust based on your actual image size */
+  height: 200px; /* Adjust based on your actual image size */
+  align-self: center; /* This ensures the triangle is also centered vertically */
+  margin-top: -20px; /* Adjust this value to move the triangle up */
 }
