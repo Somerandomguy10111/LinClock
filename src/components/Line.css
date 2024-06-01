@@ -1,3 +1,12 @@
+.timelineContainer {
+  display: flex;
+  justify-content: center;  /* Align children horizontally in the center */
+  align-items: center;      /* Align children vertically in the center */
+  position: relative;       /* Position relative for absolute positioning of the triangle */
+  height: 100vh;            /* Full viewport height */
+  padding: 50px 0;          /* Add padding to ensure content is visible */
+}
+
 .lineContainer {
   display: flex;
   align-items: center;
@@ -22,15 +31,13 @@
 
 
 .triangle {
+  position: absolute;
   width: 200px; /* Adjust based on your actual image size */
   height: 200px; /* Adjust based on your actual image size */
   align-self: center; /* This ensures the triangle is also centered vertically */
   transition: left 1s linear; /* Smooth transition of the triangle */
-  margin-top: -20px; /* Adjust this value to move the triangle up */
+  top: -70px; /* Position above the line */
+  left: 50%;
+  transform: translateX(-50%); /* Center the triangle horizontally */
 }
 
-/*@keyframes slide {*/
-/*  0% { left: 0; }*/
-/*  50% { left: calc(100%); } !* 200px is the width of the triangle *!*/
-/*  100% { left: 0; }*/
-/*}*/

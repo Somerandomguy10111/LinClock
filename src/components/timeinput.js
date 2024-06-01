@@ -15,7 +15,7 @@ const TimeInputFields = () => {
 
   return (
     <div className="time-inputs">
-      <TimeInput />
+      <TimeInput/>
       <TimeInput/>
     </div>
   );
