@@ -1,12 +1,6 @@
-//{
-//  "compilerOptions": {
-//    "baseUrl": ".",
-//    "paths": {
-//      "img/*": ["img/*"]
-//    }
-//  },
-//  "include": [
-//    "src/**/*",
-//    "img/**/*"
-//  ]
-//}
+{
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": ["src/**/*"]
+}
