@@ -1,11 +1,31 @@
-.App {
-  text-align: center;
-  margin-top: 50px; /* Adjust as needed */
+.timelineContainer {
+  display: flex;
+  justify-content: center;  /* Align children horizontally in the center */
+  align-items: center;      /* Align children vertically in the center */
+  position: relative;       /* Position relative for absolute positioning of the triangle */
+  height: 100vh;            /* Full viewport height */
+  padding: 50px 0;          /* Add padding to ensure content is visible */
 }
 
-.circle {
-  width: 200px;
-  height: 200px;
-  background-color: #007bff; /* You can set any color you like */
-  border-radius: 50%; /* This creates the circle shape */
+.verticalBar {
+  width: 10px;
+  height: 20px;  /* Height of the vertical bar */
+  background-color: black;
+}
+
+.line {
+  flex-grow: 1;
+  height: 3px;
+  background-color: black;
+}
+
+.triangle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -50px; /* Position above the line */
+  left: 50%;
+  transform: translateX(-50%); /* Center the triangle horizontally */
+  background: url('triangle.png') no-repeat center; /* Adjust if using webpack or similar bundler */
+  background-size: contain;
 }
