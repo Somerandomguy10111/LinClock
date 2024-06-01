@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Line from 'src/components/Line';
 import DateDisplay from 'src/components/DateDisplay';
-import TimeInputFields from "src/components/timeinput";
+// import TimeInputFields from "src/components/timeinput";
 
 function App() {
   const content = (

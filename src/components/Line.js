@@ -4,26 +4,22 @@ import triangleImage from 'src/img/triangle.png';  // Make sure the path is corr
 
 
 const Line = () => {
-  const [leftPosition, setLeftPosition] = useState('0%');
+  const calculatePositionFromDate = (date) => {
+    const secondsSinceMidnight = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
+    const secondsInADay = 86400;
+    return `${(secondsSinceMidnight / secondsInADay) * 100}%`;
+  };
+
+  const [leftPosition, setLeftPosition] = useState(calculatePositionFromDate(new Date()));
 
   useEffect(() => {
     const updatePosition = () => {
-      const now = new Date();
-      // For fraction of the day:
-      const secondsSinceMidnight = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-      const secondsInADay = 86400; // 24 * 60 * 60
-      const fraction = (secondsSinceMidnight / secondsInADay) * 100;
-
-      // For fraction of the minute:
-      // const secondsInMinute = now.getSeconds();
-      // const fractionOfMinute = (secondsInMinute / 60) * 100;
-
-      setLeftPosition(`${fraction}%`);
+      setLeftPosition(calculatePositionFromDate(new Date()));
     };
 
-    const timerId = setInterval(updatePosition, 1000); // Update every second
+    const timerId = setInterval(updatePosition, 1000);
 
-    return () => clearInterval(timerId); // Cleanup on component unmount
+    return () => clearInterval(timerId);
   }, []);
 
 
