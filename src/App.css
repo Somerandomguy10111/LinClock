@@ -7,7 +7,9 @@
   justify-content: center; /* Center all items vertically */
 }
 
-
-
-
-
+.time-inputs-container {
+  display: flex;
+  justify-content: flex-start; /* Align the time-inputs div to the start (left) */
+  width: 100%; /* Make sure it takes full width so it can be aligned left */
+  padding: 20px; /* Add padding if needed */
+}

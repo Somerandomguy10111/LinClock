@@ -9,11 +9,13 @@ function App() {
     <div className="App">
       <DateDisplay />
       <Line />
-      <TimeInputFields/>
+        <div className="time-inputs-container">
+            <TimeInputFields/>
+        </div>
     </div>
   );
 
-  return content;
+    return content;
 }
 
 export default App;
