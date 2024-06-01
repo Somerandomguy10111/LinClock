@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css'; // Import CSS styles
+import './App.css';
+import Line from './Line';
 
 function App() {
   return (
     <div className="App">
-      <div className="circle"></div>
+      <Line />
     </div>
   );
 }
