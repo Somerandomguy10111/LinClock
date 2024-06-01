@@ -9,9 +9,9 @@ function App() {
     <div className="App">
       <DateDisplay />
       <Line />
-        <div className="time-inputs-container">
-            <TimeInputFields/>
-        </div>
+        {/*<div className="time-inputs-container">*/}
+        {/*    <TimeInputFields/>*/}
+        {/*</div>*/}
     </div>
   );
 
