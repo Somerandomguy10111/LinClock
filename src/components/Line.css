@@ -1,12 +1,3 @@
-.timelineContainer {
-  display: flex;
-  justify-content: center;  /* Align children horizontally in the center */
-  align-items: center;      /* Align children vertically in the center */
-  position: relative;       /* Position relative for absolute positioning of the triangle */
-  height: 100vh;            /* Full viewport height */
-  padding: 50px 0;          /* Add padding to ensure content is visible */
-}
-
 .lineContainer {
   display: flex;
   align-items: center;
