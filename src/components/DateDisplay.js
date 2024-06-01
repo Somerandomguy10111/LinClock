@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'src/components/DateDisplay.css'; // If you have specific styles for the date display
 
+
 const DateDisplay = () => {
   const formatDate = () => {
     const now = new Date();

@@ -12,13 +12,12 @@
   align-items: center;
   position: absolute;
   width: 80%;
-  top: 50%;
   left: 50%; /* Position the left edge of the element at the center of the container */
   transform: translateX(-50%); /* Shift the element left by half its width to center it */
 }
 
 .verticalBar {
-  width: 2px; /* Width of the vertical bar */
+  width: 4px; /* Width of the vertical bar */
   height: 200px; /* Height of the vertical bar */
   background-color: black;
 }
