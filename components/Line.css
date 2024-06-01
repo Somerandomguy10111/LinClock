@@ -28,6 +28,6 @@
   transform: translateX(-50%);
   width: 40px;  /* Increased size for better visibility */
   height: 40px;  /* Increased size for better visibility */
-  background: url('triangle.png') no-repeat center; /* Ensure the image fits the div size */
+  background: url('img/triangle.png') no-repeat center; /* Ensure the image fits the div size */
   background-size: contain; /* Adjust the background size to fit the div */
 }

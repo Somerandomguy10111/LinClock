@@ -1,6 +1,6 @@
 import React from 'react';
 import './Line.css';
-import triangleImage from './triangle.png';  // Make sure the path is correct
+import triangleImage from 'img/triangle.png';  // Make sure the path is correct
 
 
 const Line = () => (

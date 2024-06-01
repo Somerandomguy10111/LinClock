@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Line from './Line';
+import Line from 'components/Line';
 
 function App() {
   return (

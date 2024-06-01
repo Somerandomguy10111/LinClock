@@ -26,6 +26,5 @@
   top: -50px; /* Position above the line */
   left: 50%;
   transform: translateX(-50%); /* Center the triangle horizontally */
-  background: url('triangle.png') no-repeat center; /* Adjust if using webpack or similar bundler */
   background-size: contain;
 }
