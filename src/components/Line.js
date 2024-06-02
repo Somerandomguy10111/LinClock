@@ -27,6 +27,7 @@ const Timeline = ({ segments, calculatePosition }) => {
   return contents
 };
 
+
 const Line = ({ segments }) => {
     const pos = calculatePositionFromDate(new Date())
     const [leftPosition, setLeftPosition] = useState(pos);
@@ -39,18 +40,15 @@ const Line = ({ segments }) => {
         return `${(secondsSinceMidnight / secondsInADay) * 100}%`;
     };
 
-    function updatePosition() {
-        setLeftPosition(calculatePositionFromDate(new Date()));
-    };
-
 
     function registerUpdate() {
-        const timerId = setInterval(updatePosition, 1000)
-        return () => clearInterval(timerId)
+        function updatePosition() {
+          setLeftPosition(calculatePositionFromDate(new Date()));
     };
 
-    useEffect(registerUpdate);
-
+    const timerId = setInterval(updatePosition, 1000)
+        return () => clearInterval(timerId)
+    };
 
     const calculatePosition = (time) => {
         const [hours, minutes] = time.split(':').map(Number);
@@ -59,7 +57,7 @@ const Line = ({ segments }) => {
     };
 
 
-
+    useEffect(registerUpdate);
 
     const contents = (
         <div className="lineContainer">
