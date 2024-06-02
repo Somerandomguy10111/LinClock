@@ -3,7 +3,7 @@ import './Line.css';
 import triangleImage from 'src/img/triangle.png';  // Make sure the path is correct
 
 
-const Line = () => {
+const Line = ({ segments }) => {
   const calculatePositionFromDate = (date) => {
     const secondsSinceMidnight = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
     const secondsInADay = 86400;
@@ -22,12 +22,6 @@ const Line = () => {
     return () => clearInterval(timerId);
   }, []);
 
-
-    const segments = [
-    { title: 'Work', start: '08:00', end: '13:00' },
-    { title: 'Break', start: '13:00', end: '14:00' },
-    { title: 'Work', start: '14:00', end: '19:00' },
-  ];
 
  const calculatePosition = (time) => {
     const [hours, minutes] = time.split(':').map(Number);
