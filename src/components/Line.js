@@ -63,8 +63,11 @@ const TriangleCanvas = ({ imageSrc, rgbColor, triangleCoords, className, style }
 
 
 const Line = ({ segments }) => {
+
+
     const pos = calculatePointerPos(new Date())
     const [leftPosition, setLeftPosition] = useState(pos);
+    const [color, setColor] = useState(getCurrentSegment().color)
 
     function calculatePointerPos(date) {
         const secondsSinceMidnight = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
@@ -73,16 +76,6 @@ const Line = ({ segments }) => {
         // const secondsInADay = 60;
         return `${(secondsSinceMidnight / secondsInADay) * 100}%`;
     };
-
-    function registerUpdate() {
-        function updatePosition() {
-          setLeftPosition(calculatePointerPos(new Date()));
-    };
-
-    const timerId = setInterval(updatePosition, 1000)
-        return () => clearInterval(timerId)
-    };
-
 
     function getCurrentSegment() {
         const currentTime = new Date().toTimeString().slice(0, 5);
@@ -94,6 +87,20 @@ const Line = ({ segments }) => {
         return segments[0];
     }
 
+    function registerUpdate() {
+        function updatePosition() {
+            setLeftPosition(calculatePointerPos(new Date()));
+            setColor(getCurrentSegment().color)
+            console.log(`Current color is ${getCurrentSegment().color}`);
+
+    };
+
+        const timerId = setInterval(updatePosition, 1000)
+        return () => clearInterval(timerId)
+    };
+
+
+
     useEffect(registerUpdate);
 
     const contents = (
@@ -103,7 +110,7 @@ const Line = ({ segments }) => {
             <div className="verticalBar"></div>
             <TriangleCanvas
                 imageSrc={triangleImage}
-                rgbColor={getCurrentSegment().color}
+                rgbColor={color}
                 triangleCoords={[
                     { x: 37, y: 45 },
                     { x: 100, y: 157 },
