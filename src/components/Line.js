@@ -63,8 +63,6 @@ const TriangleCanvas = ({ imageSrc, rgbColor, triangleCoords, className, style }
 
 
 const Line = ({ segments }) => {
-
-
     const pos = calculatePointerPos(new Date())
     const [leftPosition, setLeftPosition] = useState(pos);
     const [color, setColor] = useState(getCurrentSegment().color)
@@ -72,8 +70,6 @@ const Line = ({ segments }) => {
     function calculatePointerPos(date) {
         const secondsSinceMidnight = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
         const secondsInADay = 86400;
-        // const secondsSinceMidnight = date.getSeconds();
-        // const secondsInADay = 60;
         return `${(secondsSinceMidnight / secondsInADay) * 100}%`;
     };
 
