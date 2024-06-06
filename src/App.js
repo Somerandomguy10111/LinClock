@@ -49,9 +49,9 @@ function minToTime(minutes) {
 
 function App() {
     const segments = [
-        { title: 'Work', start: '02:30', end: '7:30', color: '#3333FF' },
-        { title: 'Break', start: '7:30', end: '8:30', color: '#00FF00' },
-        { title: 'Work', start: '8:30', end: '13:30', color: '#3333FF' },
+        { title: 'Work', start: '02:30', end: '07:30', color: '#3333FF' },
+        { title: 'Break', start: '07:30', end: '08:30', color: '#00FF00' },
+        { title: 'Work', start: '08:30', end: '13:30', color: '#3333FF' },
         { title: 'Break', start: '13:30', end: '14:00', color: '#00FF00' },
         { title: 'Work', start: '14:00', end: '16:00', color: '#3333FF' },
     ];

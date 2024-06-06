@@ -63,9 +63,10 @@ const TriangleCanvas = ({ imageSrc, rgbColor, triangleCoords, className, style }
 
 
 const Line = ({ segments }) => {
-    const pos = calculatePointerPos(new Date())
+    console.log('Segments:', segments);
+    const pos = calculatePointerPos(new Date());
     const [leftPosition, setLeftPosition] = useState(pos);
-    const [color, setColor] = useState(getCurrentSegment().color)
+    const [color, setColor] = useState(getCurrentSegment().color);
 
     function calculatePointerPos(date) {
         const secondsSinceMidnight = date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
@@ -76,7 +77,9 @@ const Line = ({ segments }) => {
     function getCurrentSegment() {
         const currentTime = new Date().toTimeString().slice(0, 5);
         for (let segment of segments) {
-            if (currentTime >= segment.start && currentTime < segment.end) {
+            const condition = currentTime >= segment.start && currentTime < segment.end;
+            console.log(`Current time: ${currentTime}, Segment: ${segment.start} - ${segment.end}, Condition: ${condition}`);
+            if (condition) {
                 return segment;
             }
         }
@@ -86,23 +89,20 @@ const Line = ({ segments }) => {
     function registerUpdate() {
         function updatePosition() {
             setLeftPosition(calculatePointerPos(new Date()));
-            setColor(getCurrentSegment().color)
-            console.log(`Current color is ${getCurrentSegment().color}`);
+            setColor(getCurrentSegment().color);
+            console.log('Current segment:', getCurrentSegment());
+        };
 
+        const timerId = setInterval(updatePosition, 1000);
+        return () => clearInterval(timerId);
     };
 
-        const timerId = setInterval(updatePosition, 1000)
-        return () => clearInterval(timerId)
-    };
-
-
-
-    useEffect(registerUpdate);
+    useEffect(registerUpdate, []);
 
     const contents = (
         <div className="lineContainer">
             <div className="verticalBar"></div>
-            <Timeline segments={segments}/>
+            <Timeline segments={segments} />
             <div className="verticalBar"></div>
             <TriangleCanvas
                 imageSrc={triangleImage}
@@ -117,7 +117,6 @@ const Line = ({ segments }) => {
             />
         </div>
     );
-
 
     return contents;
 };
