@@ -49,11 +49,11 @@ function minToTime(minutes) {
 
 function App() {
     const segments = [
-        { title: 'Work', start: '02:30', end: '07:30', color: '#3333FF' },
-        { title: 'Break', start: '07:30', end: '08:30', color: '#00FF00' },
-        { title: 'Work', start: '08:30', end: '13:30', color: '#3333FF' },
-        { title: 'Break', start: '13:30', end: '14:00', color: '#00FF00' },
-        { title: 'Work', start: '14:00', end: '16:00', color: '#3333FF' },
+        { title: 'Work', start: '06:30', end: '11:30', color: '#3333FF' },
+        { title: 'Break', start: '11:30', end: '12:30', color: '#00FF00' },
+        { title: 'Work', start: '12:30', end: '17:30', color: '#3333FF' },
+        { title: 'Break', start: '17:00', end: '17:30', color: '#00FF00' },
+        { title: 'Work', start: '17:30', end: '19:30', color: '#3333FF' },
     ];
 
     const filledSegments = fillTimeGaps(segments)
