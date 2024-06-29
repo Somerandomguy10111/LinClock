@@ -63,7 +63,7 @@ const TriangleCanvas = ({ imageSrc, rgbColor, triangleCoords, className, style }
 
 
 const Line = ({ segments }) => {
-    console.log('Segments:', segments);
+    // console.log('Segments:', segments);
     const pos = calculatePointerPos(new Date());
     const [leftPosition, setLeftPosition] = useState(pos);
     const [color, setColor] = useState(getCurrentSegment().color);
@@ -78,7 +78,7 @@ const Line = ({ segments }) => {
         const currentTime = new Date().toTimeString().slice(0, 5);
         for (let segment of segments) {
             const condition = currentTime >= segment.start && currentTime < segment.end;
-            console.log(`Current time: ${currentTime}, Segment: ${segment.start} - ${segment.end}, Condition: ${condition}`);
+            // console.log(`Current time: ${currentTime}, Segment: ${segment.start} - ${segment.end}, Condition: ${condition}`);
             if (condition) {
                 return segment;
             }
@@ -90,7 +90,7 @@ const Line = ({ segments }) => {
         function updatePosition() {
             setLeftPosition(calculatePointerPos(new Date()));
             setColor(getCurrentSegment().color);
-            console.log('Current segment:', getCurrentSegment());
+            // console.log('Current segment:', getCurrentSegment());
         };
 
         const timerId = setInterval(updatePosition, 1000);
