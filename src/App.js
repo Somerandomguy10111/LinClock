@@ -50,11 +50,11 @@ function minToTime(minutes) {
 function App() {
 
     const segments = [
-        { title: 'Work', start: '12:45', end: '17:45', color: '#3333FF' },
-        { title: 'Break', start: '17:45', end: '18:30', color: '#00FF00' },
-        { title: 'Work', start: '23:30', end: '00:30', color: '#3333FF' },
-        { title: 'Break', start: '00:30', end: '00:45', color: '#00FF00' },
-        { title: 'Work', start: '00:45', end: '02:45', color: '#3333FF' },
+        { title: 'Work', start: '10:45', end: '15:45', color: '#3333FF' },
+        { title: 'Break', start: '15:45', end: '16:30', color: '#00FF00' },
+        { title: 'Work', start: '16:30', end: '21:30', color: '#3333FF' },
+        { title: 'Break', start: '21:30', end: '22:00', color: '#00FF00' },
+        { title: 'Work', start: '22:00', end: '00:00', color: '#3333FF' },
     ]
 
 
